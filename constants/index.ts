@@ -4,7 +4,7 @@ export const WHAT_CAN_I_DO = [
     text: "Ever felt your product needed that ",
     className: "text-[#c1c1c1]",
   },
-  { text: "extra punch?", className: "text-black font-bold" },
+  { text: "extra punch?", className: "text-foreground font-bold" },
 
   { text: "\n" },
   { text: "\n" },
@@ -13,22 +13,22 @@ export const WHAT_CAN_I_DO = [
     text: "For the past 3+ years I’ve been engineering",
     className: "text-[#c1c1c1]",
   },
-  { text: "high-performing", className: "text-black font-bold" },
+  { text: "high-performing", className: "text-foreground font-bold" },
   {
     text: "front-end applications and crafting seamless user experiences with modern frameworks",
     className: "text-[#c1c1c1]",
   },
   {
     text: "like React.js Vue.js and ReactNative.",
-    className: "text-black font-bold",
+    className: "text-foreground font-bold",
   },
   {
     text: "I specialize in building interfaces that are fast",
     className: "text-[#c1c1c1]",
   },
-  { text: "scalable,", className: "text-black font-bold" },
+  { text: "scalable,", className: "text-foreground font-bold" },
   { text: "and", className: "text-[#c1c1c1]" },
-  { text: "user-friendly—the", className: "text-black font-bold" },
+  { text: "user-friendly—the", className: "text-foreground font-bold" },
   {
     text: "kind that turn ideas into polished products.",
     className: "text-[#c1c1c1]",
@@ -40,7 +40,7 @@ export const WHAT_CAN_I_DO = [
   // Fourth paragraph
   {
     text: "Scaling front-end architectures? Optimizing performance? Creating smooth user experiences?",
-    className: "text-black font-bold",
+    className: "text-foreground font-bold",
   },
   { text: "\n" },
   { text: "\n" },
@@ -51,6 +51,6 @@ export const WHAT_CAN_I_DO = [
   // Fifth paragraph
   {
     text: "Excited to team up and turn ideas into reality.",
-    className: "text-black font-bold",
+    className: "text-foreground font-bold",
   },
 ];

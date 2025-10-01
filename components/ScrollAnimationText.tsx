@@ -50,7 +50,7 @@ const ScrollAnimatedText = () => {
   let globalIndex = 0;
 
   return (
-    <div className={`flex flex-wrap gap-x-2 ${spacemono.className}`}>
+    <div className={`flex flex-wrap gap-x-2 text-foreground ${spacemono.className}`}>
       {lines.map((line, lineIndex) => (
         <div key={lineIndex} className="flex sm:text-4xl text-xl">
           {line.split("").map((char, charIndex) => {

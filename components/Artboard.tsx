@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import React, { useRef } from "react";
-import { Fasthand, Instrument_Serif } from "next/font/google";
+import { Instrument_Serif } from "next/font/google";
 import CardFan from "./CardFan";
 // const fasthand = Fasthand({
 //   subsets: ["latin"],
@@ -24,24 +24,29 @@ const DATA = {
 const Artboard = () => {
   const ref = useRef<HTMLDivElement>(null);
   return (
-    <div className="sm:h-[calc(100vh-100px)] h-[calc(100dvh-400px)] sm:p-10 sm:pt-6 p-2 text-white">
+    <div className="sm:h-[calc(100vh-100px)] h-[calc(100dvh-400px)] sm:p-10 sm:pt-0 p-2 text-foreground">
       <div
-        className="size-full relative overflow-hidden border-2 flex justify-center items-center bg-neutral-900 !cursor-grab"
+        className="size-full relative overflow-hidden border-2 border-border flex justify-center items-center bg-muted !cursor-grab"
         ref={ref}
       >
         <motion.div
-          className="child sm:h-[250vh] h-[450vh] sm:min-w-[250vw] min-w-[550vw] bg-[url('/gridImage.svg')] bg-repeat flex justify-center items-center relative !z-20"
-          style={{
-            backgroundSize: "40px 40px",
-            backgroundBlendMode: "hard-light",
-          }}
+          className="
+  child
+  sm:h-[250vh] h-[450vh]
+  sm:min-w-[250vw] min-w-[550vw]
+  bg-[image:linear-gradient(to_right,var(--grid-color)_1px,transparent_1px),linear-gradient(to_bottom,var(--grid-color)_1px,transparent_1px)]
+  bg-[size:12px_12px]
+  relative flex justify-center items-center
+  !z-20
+"
+          style={{}}
           drag
           dragMomentum={false}
           dragConstraints={ref}
         >
           <div className="relative sm:h-[calc(100vh-100px)] h-[calc(100vh-400px)] flex flex-col justify-around py-32 items-center w-screen text-center grand-child">
             <div
-              className={`flex flex-col items-center ${instrument_Serif.className} x`}
+              className={`flex flex-col items-center ${instrument_Serif.className}`}
             >
               <h2 className="sm:text-2xl text-xl  sm:mb-32 mb-16 sm:max-w-fit max-w-52 text-center">
                 Find everything about me on this canvas

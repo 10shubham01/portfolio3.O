@@ -1,49 +1,181 @@
+"use client";
+
 import { Space_Mono } from "next/font/google";
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useTheme } from "next-themes";
+import { SunIcon, MoonIcon } from "@radix-ui/react-icons";
+import { motion, AnimatePresence } from "framer-motion";
+import HoverFlipText from "./HoverFlipText";
+import AnimatedMenuButton from "./AnimatedMenuButton";
 
 const spacemono = Space_Mono({
   subsets: ["latin"],
   weight: ["400", "700"],
   preload: true,
 });
+
 const Navbar = () => {
+  const [mounted, setMounted] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { setTheme, resolvedTheme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const toggleTheme = () =>
+    setTheme(resolvedTheme === "dark" ? "light" : "dark");
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) element.scrollIntoView({ behavior: "smooth" });
+    setIsMenuOpen(false);
+  };
+
+  const menuVariants = {
+    closed: { height: 0, opacity: 0 },
+    open: { height: "auto", opacity: 1 },
+  };
+
+  const itemVariants = {
+    closed: { opacity: 0, y: -10 },
+    open: { opacity: 1, y: 0 },
+  };
+
+  if (!mounted) return null;
+
   return (
-    <div
-      className={`w-full text-black sm:px-10 px-2 flex items-center justify-between left-0 z-30 pt-6 font-bold ${spacemono.className} `}
+    <nav
+      className={`w-full bg-background/80 backdrop-blur-md z-50 ${spacemono.className} relative`}
     >
-      <h1>SHUBHAMGUPTA.DEV</h1>
-      <div className="flex items-center gap-10 cursor-pointer">
-        <h1>GET IN TOUCH</h1>
-        <svg
-          width="15"
-          height="15"
-          viewBox="0 0 15 15"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M7.5 0C7.77614 0 8 0.223858 8 0.5V2.5C8 2.77614 7.77614 3 7.5 3C7.22386 3 7 2.77614 7 2.5V0.5C7 0.223858 7.22386 0 7.5 0ZM2.1967 2.1967C2.39196 2.00144 2.70854 2.00144 2.90381 2.1967L4.31802 3.61091C4.51328 3.80617 4.51328 4.12276 4.31802 4.31802C4.12276 4.51328 3.80617 4.51328 3.61091 4.31802L2.1967 2.90381C2.00144 2.70854 2.00144 2.39196 2.1967 2.1967ZM0.5 7C0.223858 7 0 7.22386 0 7.5C0 7.77614 0.223858 8 0.5 8H2.5C2.77614 8 3 7.77614 3 7.5C3 7.22386 2.77614 7 2.5 7H0.5ZM2.1967 12.8033C2.00144 12.608 2.00144 12.2915 2.1967 12.0962L3.61091 10.682C3.80617 10.4867 4.12276 10.4867 4.31802 10.682C4.51328 10.8772 4.51328 11.1938 4.31802 11.3891L2.90381 12.8033C2.70854 12.9986 2.39196 12.9986 2.1967 12.8033ZM12.5 7C12.2239 7 12 7.22386 12 7.5C12 7.77614 12.2239 8 12.5 8H14.5C14.7761 8 15 7.77614 15 7.5C15 7.22386 14.7761 7 14.5 7H12.5ZM10.682 4.31802C10.4867 4.12276 10.4867 3.80617 10.682 3.61091L12.0962 2.1967C12.2915 2.00144 12.608 2.00144 12.8033 2.1967C12.9986 2.39196 12.9986 2.70854 12.8033 2.90381L11.3891 4.31802C11.1938 4.51328 10.8772 4.51328 10.682 4.31802ZM8 12.5C8 12.2239 7.77614 12 7.5 12C7.22386 12 7 12.2239 7 12.5V14.5C7 14.7761 7.22386 15 7.5 15C7.77614 15 8 14.7761 8 14.5V12.5ZM10.682 10.682C10.8772 10.4867 11.1938 10.4867 11.3891 10.682L12.8033 12.0962C12.9986 12.2915 12.9986 12.608 12.8033 12.8033C12.608 12.9986 12.2915 12.9986 12.0962 12.8033L10.682 11.3891C10.4867 11.1938 10.4867 10.8772 10.682 10.682ZM5.5 7.5C5.5 6.39543 6.39543 5.5 7.5 5.5C8.60457 5.5 9.5 6.39543 9.5 7.5C9.5 8.60457 8.60457 9.5 7.5 9.5C6.39543 9.5 5.5 8.60457 5.5 7.5ZM7.5 4.5C5.84315 4.5 4.5 5.84315 4.5 7.5C4.5 9.15685 5.84315 10.5 7.5 10.5C9.15685 10.5 10.5 9.15685 10.5 7.5C10.5 5.84315 9.15685 4.5 7.5 4.5Z"
-            fill="currentColor"
-            fillRule="evenodd"
-            clipRule="evenodd"
-          ></path>
-        </svg>
-        <svg
-          width="15"
-          height="15"
-          viewBox="0 0 15 15"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M1.5 3C1.22386 3 1 3.22386 1 3.5C1 3.77614 1.22386 4 1.5 4H13.5C13.7761 4 14 3.77614 14 3.5C14 3.22386 13.7761 3 13.5 3H1.5ZM1 7.5C1 7.22386 1.22386 7 1.5 7H13.5C13.7761 7 14 7.22386 14 7.5C14 7.77614 13.7761 8 13.5 8H1.5C1.22386 8 1 7.77614 1 7.5ZM1 11.5C1 11.2239 1.22386 11 1.5 11H13.5C13.7761 11 14 11.2239 14 11.5C14 11.7761 13.7761 12 13.5 12H1.5C1.22386 12 1 11.7761 1 11.5Z"
-            fill="currentColor"
-            fillRule="evenodd"
-            clipRule="evenodd"
-          ></path>
-        </svg>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Top bar */}
+        <div className="flex items-center justify-between h-16">
+          <div className="flex-shrink-0">
+            <h1 className="text-lg font-bold text-foreground cursor-pointer">
+              SHUBHAMGUPTA.DEV
+            </h1>
+          </div>
+
+          <div className="flex items-center space-x-4">
+            <button
+              onClick={() => scrollToSection("contact")}
+              className="text-foreground px-3 py-2 text-sm font-medium"
+            >
+              <HoverFlipText primary="GET IN TOUCH" />
+            </button>
+
+            {/* Theme Toggle with Animation */}
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-md relative w-8 h-8 flex items-center justify-center cursor-pointer"
+              aria-label="Toggle theme"
+            >
+              <AnimatePresence mode="wait">
+                {resolvedTheme === "dark" ? (
+                  <motion.div
+                    key="sun"
+                    initial={{ opacity: 0, scale: 0.5, rotate: -90 }}
+                    animate={{ opacity: 1, scale: 1, rotate: 0 }}
+                    exit={{ opacity: 0, scale: 0.5, rotate: 90 }}
+                    transition={{ duration: 0.4 }}
+                  >
+                    <SunIcon className="h-5 w-5" />
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key="moon"
+                    initial={{ opacity: 0, scale: 0.5, rotate: -90 }}
+                    animate={{ opacity: 1, scale: 1, rotate: 0 }}
+                    exit={{ opacity: 0, scale: 0.5, rotate: 90 }}
+                    transition={{ duration: 0.4 }}
+                  >
+                    <MoonIcon className="h-5 w-5" />
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </button>
+
+            {/* Menu Toggle */}
+            <AnimatedMenuButton toggle={toggleMenu} isOpen={isMenuOpen} />
+          </div>
+        </div>
+
+        {/* Collapsible Menu */}
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.div
+              initial="closed"
+              animate="open"
+              exit="closed"
+              variants={menuVariants}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="overflow-hidden grid sm:grid-cols-2 absolute z-20 top-16 bg-background w-full left-0 right-0 pb-10 px-6"
+            >
+              {/* Left Side - Nav Links */}
+              <div className=" space-y-4">
+                {["home", "work", "contact"].map((section, index) => (
+                  <motion.button
+                    key={section}
+                    variants={itemVariants}
+                    transition={{ duration: 0.2, delay: index * 0.05 }}
+                    onClick={() => scrollToSection(section)}
+                    className="w-full text-left text-foreground px-3 py-2 text-6xl font-medium flex items-center gap-x-4"
+                  >
+                    <span className="opacity-50">{`0${index + 1}`}</span>{" "}
+                    <HoverFlipText
+                      primary={section.toUpperCase()}
+                      secondary={section.toUpperCase()}
+                    />
+                  </motion.button>
+                ))}
+              </div>
+
+              <div className="self-end space-y-4 ">
+                <motion.div
+                  variants={itemVariants}
+                  transition={{ duration: 0.2, delay: 0.3 }}
+                  className="pt-4"
+                >
+                  <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-2 px-3">
+                    EMAIL
+                  </h3>
+                  <a
+                    href="mailto:shubhamedu.01@gmail.com"
+                    className="text-foreground px-3 py-2 text-sm font-medium"
+                  >
+                    <HoverFlipText
+                      primary="SHUBHAMEDU.01@GMAIL.COM"
+                      secondary="DROP A MAIL"
+                    />
+                  </a>
+                </motion.div>
+                <motion.div
+                  variants={itemVariants}
+                  transition={{ duration: 0.2, delay: 0.25 }}
+                >
+                  <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wider px-3">
+                    SOCIALS
+                  </h3>
+                  <div className="flex gap-2">
+                    {["LINKEDIN", "INSTAGRAM", "MEDIUM"].map((social) => (
+                      <a
+                        key={social}
+                        href="#"
+                        className="text-foreground px-3 py-2 text-sm font-medium"
+                      >
+                        <HoverFlipText primary={social} />
+                      </a>
+                    ))}
+                  </div>
+                </motion.div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
-    </div>
+    </nav>
   );
 };
 
