@@ -28,9 +28,9 @@ export const WHAT_CAN_I_DO = [
   },
   { text: "scalable,", className: "text-foreground font-bold" },
   { text: "and", className: "text-[#c1c1c1]" },
-  { text: "user-friendly—the", className: "text-foreground font-bold" },
+  { text: "user-friendly", className: "text-foreground font-bold" },
   {
-    text: "kind that turn ideas into polished products.",
+    text: "—the kind that turn ideas into polished products.",
     className: "text-[#c1c1c1]",
   },
   { text: "\n" },
@@ -42,7 +42,6 @@ export const WHAT_CAN_I_DO = [
     text: "Scaling front-end architectures? Optimizing performance? Creating smooth user experiences?",
     className: "text-foreground font-bold",
   },
-  { text: "\n" },
   { text: "\n" },
 
   { text: "Been there done that.", className: "text-[#c1c1c1]" },

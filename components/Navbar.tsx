@@ -66,7 +66,6 @@ const Navbar = () => {
               <HoverFlipText primary="GET IN TOUCH" />
             </button>
 
-            {/* Theme Toggle with Animation */}
             <button
               onClick={toggleTheme}
               className="p-2 rounded-md relative w-8 h-8 flex items-center justify-center cursor-pointer"
