@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import React, { useRef } from "react";
 import { Instrument_Serif } from "next/font/google";
 import CardFan from "./CardFan";
+import HeroText from "./HeroText";
 // const fasthand = Fasthand({
 //   subsets: ["latin"],
 //   weight: ["400"],
@@ -52,7 +53,7 @@ const Artboard = () => {
                 Find everything about me on this canvas
               </h2>
 
-              <h2 className="sm:text-9xl text-5xl">{DATA.title}</h2>
+              <HeroText className="sm:text-9xl text-5xl" text={DATA.title} />
               <h1 className="sm:text-2xl text-xl text-left self-start">
                 {DATA.name}
               </h1>
