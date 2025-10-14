@@ -18,22 +18,24 @@ const Page = () => {
     <main className={`${spacemono.className}`}>
       <section id="home" className="space-y-10">
         <Artboard />
-        <div className="sm:p-10 sm:pt-0 pt-0 p-2  sm:!px-20 !px-10  max-w-4xl">
-          <ScrollAnimatedText />
-        </div>
       </section>
 
       <section
         id="about"
-        className="sm:p-10 sm:pt-0 pt-0 p-2  sm:!px-20 !px-10 grid sm:grid-cols-2 gap-4 py-20 h-screen"
+        className="sm:p-10 sm:pt-0 pt-0 p-2  sm:!px-20 !px-10 h-screen flex flex-col justify-center "
       >
-        <h1 className="text-foreground">WHAT I CAN DO</h1>
-        <TextGenerateEffect
-          words={WHAT_CAN_I_DO}
-          className="text-base text-foreground"
-          filter={true}
-          duration={0.2}
-        />
+        <div className="max-w-4xl">
+          <ScrollAnimatedText />
+        </div>
+        <div className=" grid sm:grid-cols-2 gap-4 py-20">
+          <h1 className="text-foreground">WHAT I CAN DO</h1>
+          <TextGenerateEffect
+            words={WHAT_CAN_I_DO}
+            className="text-base text-foreground"
+            filter={true}
+            duration={0.2}
+          />
+        </div>
       </section>
       <section
         id="work"

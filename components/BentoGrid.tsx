@@ -1,8 +1,9 @@
 "use client";
 import { cn } from "@/lib/utils";
-import { AnimatePresence, LayoutGroup, motion } from "framer-motion";
-import { useState } from "react";
+import { AnimatePresence, LayoutGroup, motion, useInView } from "framer-motion";
+import { useRef, useState } from "react";
 import HoverFlipText from "./HoverFlipText";
+import Alien from "./Alien";
 
 const BentoGrid = ({
   items,
@@ -13,6 +14,9 @@ const BentoGrid = ({
 }) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [localItems, setItems] = useState(items);
+  const ref = useRef(null);
+
+  const isInView = useInView(ref, { once: true, margin: "-10%" });
 
   const handleClick = (id: number) => {
     const selectedItem = localItems.find((item) => item.id === id);
@@ -35,8 +39,16 @@ const BentoGrid = ({
             <motion.div
               key={item.id}
               layout
+              ref={ref}
+              initial={{ opacity: 0, x: 200 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
               transition={{
-                layout: { duration: 0.7, type: "spring", bounce: 0.25 },
+                layout: { duration: 0.7, type: "spring", bounce: 0 },
+                duration: 1,
+                delay: idx * 0.2,
+                type: "spring",
+                bounce: 0.1,
               }}
               onClick={() => handleClick(item.id)}
               onMouseEnter={() => setHoveredIndex(idx)}
@@ -62,20 +74,19 @@ const BentoGrid = ({
 
               <Card>
                 {/* Index number visible everywhere */}
-                <div
+                <Alien
+                  text={item.duration}
                   className={`text-zinc-500 text-xs font-mono z-40 ${
                     item.duration === "Oct 2024 – Present" &&
-                    "bg-[#39ff14] inline !text-black px-2"
+                    "!text-black bg-[#39ff14]"
                   }`}
-                >
-                  {item.duration}
-                </div>
+                ></Alien>
 
                 {/* If it's the big grid item (idx === 0) show full details */}
                 {idx === 0 ? (
                   <div>
                     <HoverFlipText
-                      className="text-zinc-100 font-semibold tracking-wide text-lg"
+                      className="text-zinc-100 font-semibold tracking-wide text-lg mt-5"
                       primary={item.company}
                     ></HoverFlipText>
                     <p className="text-zinc-400 text-sm mt-1">{item.role}</p>
