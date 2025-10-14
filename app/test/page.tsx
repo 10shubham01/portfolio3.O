@@ -1,47 +1,80 @@
 import BentoGrid from "@/components/BentoGrid";
 import React from "react";
-export const projects = [
+const experience = [
   {
     id: 1,
-    title: "Credilio Financial Technologies — Senior Software Engineer",
+    company: "MountBlue Technologies",
+    role: "Software Engineer / Consultant",
+    duration: "Aug 2021 – Nov 2022",
     description:
-      "Led a team of engineers and mentored developers through code reviews, knowledge sharing, and onboarding. Managed and optimized GitHub CI/CD pipelines for AWS deployment, ensuring efficient and reliable releases.",
-    link: "https://www.credilio.in/",
+      "Worked as a consultant developer delivering React-based fintech applications for clients. Focused on building modular CMS platforms and advisor dashboards that enhanced workflow efficiency and maintainability.",
+    achievements: [
+      "Built reusable CMS and Advisor Portal modules using React.js and TypeScript.",
+      "Implemented role-based access control and integrated REST APIs for client projects.",
+      "Improved performance and accessibility with optimized rendering and lazy loading.",
+    ],
+    techStack: [
+      "React.js",
+      "TypeScript",
+      "Express.js",
+      "PostgreSQL",
+      "TailwindCSS",
+      "GitHub Actions",
+    ],
+    link: "https://www.mountblue.io/",
   },
   {
     id: 2,
-    title: "Customer Portal — Credilio",
+    company: "Credilio Financial Technologies",
+    role: "Software Engineer",
+    duration: "Dec 2022 – Oct 2024",
     description:
-      "Integrated multiple bank APIs to streamline credit card and personal loan journeys. Rebuilt the portal using composable architecture, improving maintainability by 20%. Enhanced page load performance using virtual scrolling, debouncing, and rendering optimizations.",
+      "Joined Credilio to modernize and scale fintech web platforms. Worked on the Customer, Admin, and Novio portals using Vue.js and Nuxt.js. Migrated legacy systems, improved performance, and implemented robust validation and accessibility standards.",
+    achievements: [
+      "Migrated Nuxt 2 applications to Nuxt 3 for better performance and code maintainability.",
+      "Developed Customer, Admin, and Novio portals with composable Vue components.",
+      "Enhanced accessibility and reduced initial load time through optimized rendering strategies.",
+    ],
+    techStack: [
+      "Vue.js",
+      "Nuxt.js",
+      "TypeScript",
+      "Zod",
+      "TailwindCSS",
+      "Vite",
+      "Node.js",
+    ],
     link: "https://www.credilio.in/",
   },
   {
     id: 3,
-    title: "Advisor Portal — Credilio",
+    company: "Credilio Financial Technologies",
+    role: "Senior Software Engineer / Lead Developer",
+    duration: "Oct 2024 – Present",
     description:
-      "Developed reusable and accessible components with built-in validation. Implemented lead, customer, and earnings reports with secure file downloads. Built persistent JWT-based authentication and authorization adhering to security best practices.",
+      "Promoted to Lead Developer, overseeing frontend architecture, mentoring developers, and managing CI/CD pipelines. Introduced Nuxt 4, AWS automation, and built a video-based credit bureau score report using Remotion for personalized customer insights.",
+    achievements: [
+      "Led a team of 5+ engineers, enforcing code quality and delivery timelines.",
+      "Implemented AWS-based deployments using CloudFront, S3, and GitHub Actions.",
+      "Developed an automated video wrap system for customer bureau scores using Remotion.",
+    ],
+    techStack: [
+      "Nuxt 4",
+      "TypeScript",
+      "AWS",
+      "Remotion",
+      "Framer Motion",
+      "TailwindCSS",
+      "GitHub Actions",
+    ],
     link: "https://www.credilio.in/",
-  },
-  {
-    id: 4,
-    title: "Plug and Play Platform — Credilio",
-    description:
-      "Delivered dynamic theme support for partner integrations. Facilitated communication between Android/iOS apps and WebView in a single-page app, leading a team of 3–4 developers. Guided partner developers for seamless web-to-native integration.",
-    link: "https://www.credilio.in/",
-  },
-  {
-    id: 5,
-    title: "MountBlue Technologies — Software Engineer/Trainee",
-    description:
-      "Built dynamic full-stack applications using Vue.js, React.js, and Node.js. Migrated Nuxt 2 projects to Nuxt 3 for better performance and maintainability. Delivered high-quality code with strong debugging and QA focus using Express.js and PostgreSQL/MySQL.",
-    link: "https://www.mountblue.io/",
   },
 ];
 
 export default function page() {
   return (
     <div className=" w-screen flex justify-center items-center">
-      <BentoGrid className="max-w-6xl" items={projects}></BentoGrid>
+      <BentoGrid items={experience}></BentoGrid>
     </div>
   );
 }

@@ -27,7 +27,7 @@ const Artboard = () => {
   return (
     <div className="sm:h-[calc(100vh-100px)] h-[calc(100dvh-400px)] sm:p-10 sm:pt-0 p-2 text-foreground">
       <div
-        className="size-full relative overflow-hidden border-2 border-border flex justify-center items-center bg-muted !cursor-grab"
+        className="size-full relative overflow-hidden border-2 border-border flex justify-center items-center bg-background !cursor-grab"
         ref={ref}
       >
         <motion.div
@@ -36,7 +36,7 @@ const Artboard = () => {
   sm:h-[250vh] h-[450vh]
   sm:min-w-[250vw] min-w-[550vw]
   bg-[image:linear-gradient(to_right,var(--grid-color)_1px,transparent_1px),linear-gradient(to_bottom,var(--grid-color)_1px,transparent_1px)]
-  bg-[size:12px_12px]
+  bg-[size:20px_20px]
   relative flex justify-center items-center
   !z-20
 "

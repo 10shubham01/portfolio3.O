@@ -2,9 +2,10 @@ import Artboard from "@/components/Artboard";
 import ScrollAnimatedText from "@/components/ScrollAnimationText";
 import React from "react";
 import { Bricolage_Grotesque } from "next/font/google";
-import { WHAT_CAN_I_DO } from "@/constants";
+import { experience, WHAT_CAN_I_DO } from "@/constants";
 import { TextGenerateEffect } from "@/components/TextGenratedEffect";
 import HoverFlipText from "@/components/HoverFlipText";
+import BentoGrid from "@/components/BentoGrid";
 
 const spacemono = Bricolage_Grotesque({
   subsets: ["latin"],
@@ -34,7 +35,16 @@ const Page = () => {
           duration={0.2}
         />
       </section>
-
+      <section
+        id="work"
+        className="sm:p-10 sm:pt-0 pt-0 p-2  sm:!px-20 !px-10 py-20 h-screen flex-col flex justify-center items-center"
+      >
+        <HoverFlipText
+          primary="WORK EXPERIANCE"
+          className="text-foreground sm:text-6xl text-3xl font-bold text-left w-full mb-10"
+        ></HoverFlipText>
+        <BentoGrid items={experience}></BentoGrid>
+      </section>
       <section
         id="contact"
         className="sm:p-10 sm:pt-0 pt-0 p-2  sm:!px-20 !px-10 py-20 h-screen  place-content-center"
