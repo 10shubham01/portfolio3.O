@@ -1,7 +1,7 @@
 "use client";
 import { cn } from "@/lib/utils";
-import { AnimatePresence, LayoutGroup, motion, useInView } from "framer-motion";
-import { useRef, useState } from "react";
+import { AnimatePresence, LayoutGroup, motion } from "framer-motion";
+import { useState } from "react";
 import HoverFlipText from "./HoverFlipText";
 import Alien from "./Alien";
 
@@ -9,15 +9,12 @@ const BentoGrid = ({
   items,
   className,
 }: {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   items: any[];
   className?: string;
 }) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [localItems, setItems] = useState(items);
-  const ref = useRef(null);
-
-  const isInView = useInView(ref, { once: true, margin: "-10%" });
-
   const handleClick = (id: number) => {
     const selectedItem = localItems.find((item) => item.id === id);
     if (!selectedItem) return;
@@ -39,7 +36,6 @@ const BentoGrid = ({
             <motion.div
               key={item.id}
               layout
-              ref={ref}
               initial={{ opacity: 0, x: 200 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.2 }}

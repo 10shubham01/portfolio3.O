@@ -54,7 +54,7 @@ const ScrollAnimatedText = () => {
       className={`flex flex-wrap gap-x-2 text-foreground ${spacemono.className}`}
     >
       {lines.map((line, lineIndex) => (
-        <div key={lineIndex} className="flex sm:text-4xl text-xl">
+        <div key={lineIndex} className="flex sm:text-4xl text-xl sm:leading-14">
           {line.split("").map((char, charIndex) => {
             const start = globalIndex * duration;
             const end = start + duration;

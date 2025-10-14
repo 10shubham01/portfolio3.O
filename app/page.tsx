@@ -22,9 +22,9 @@ const Page = () => {
 
       <section
         id="about"
-        className="sm:p-10 sm:pt-0 pt-0 p-2  sm:!px-20 !px-10 h-screen flex flex-col justify-center "
+        className="sm:p-10 sm:pt-0 pt-0 p-2  sm:!px-35 !px-10 h-screen flex flex-col justify-center "
       >
-        <div className="max-w-4xl">
+        <div className="max-w-4xl font-bold">
           <ScrollAnimatedText />
         </div>
         <div className=" grid sm:grid-cols-2 gap-4 py-20">
@@ -39,13 +39,13 @@ const Page = () => {
       </section>
       <section
         id="work"
-        className="sm:p-10 sm:pt-0 pt-0 p-2  sm:!px-20 !px-10 py-20 h-screen flex-col flex justify-center items-center"
+        className="sm:p-10 sm:pt-0 pt-0 p-2  sm:!px-35 !px-10 py-20 h-screen flex-col flex justify-center items-center"
       >
         <BentoGrid items={experience}></BentoGrid>
       </section>
       <section
         id="contact"
-        className="sm:p-10 sm:pt-0 pt-0 p-2  sm:!px-20 !px-10 py-20 h-screen  place-content-center"
+        className="sm:p-10 sm:pt-0 pt-0 p-2  sm:!px-35 !px-10 py-20 h-screen  place-content-center"
       >
         <div className="grid sm:grid-cols-2 gap-8">
           <div>

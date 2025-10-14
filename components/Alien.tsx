@@ -47,10 +47,12 @@ function HoverableLetter({
     const interval = setInterval(() => {
       setRandomLetter(getRandomCharacter());
     }, 50);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (window as any).hoverInterval = interval;
   };
 
   const handleMouseLeave = () => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     clearInterval((window as any).hoverInterval);
     setRandomLetter(letter);
   };
