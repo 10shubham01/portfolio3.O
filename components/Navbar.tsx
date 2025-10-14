@@ -30,7 +30,7 @@ const Navbar = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) element.scrollIntoView({ behavior: "smooth" });
-    setIsMenuOpen(false);
+    // setIsMenuOpen(false);
   };
 
   const menuVariants = {
@@ -114,7 +114,7 @@ const Navbar = () => {
             >
               {/* Left Side - Nav Links */}
               <div className=" space-y-4">
-                {["home", "work", "contact"].map((section, index) => (
+                {["home", "about", "work", "contact"].map((section, index) => (
                   <motion.button
                     key={section}
                     variants={itemVariants}

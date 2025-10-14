@@ -24,8 +24,8 @@ const Page = () => {
       </section>
 
       <section
-        id="works"
-        className="sm:p-10 sm:pt-0 pt-0 p-2  sm:!px-20 !px-10 grid sm:grid-cols-2 gap-4 py-20"
+        id="about"
+        className="sm:p-10 sm:pt-0 pt-0 p-2  sm:!px-20 !px-10 grid sm:grid-cols-2 gap-4 py-20 h-screen"
       >
         <h1 className="text-foreground">WHAT I CAN DO</h1>
         <TextGenerateEffect
@@ -39,10 +39,6 @@ const Page = () => {
         id="work"
         className="sm:p-10 sm:pt-0 pt-0 p-2  sm:!px-20 !px-10 py-20 h-screen flex-col flex justify-center items-center"
       >
-        <HoverFlipText
-          primary="WORK EXPERIANCE"
-          className="text-foreground sm:text-6xl text-3xl font-bold text-left w-full mb-10"
-        ></HoverFlipText>
         <BentoGrid items={experience}></BentoGrid>
       </section>
       <section

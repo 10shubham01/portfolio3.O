@@ -24,14 +24,13 @@ const BentoGrid = ({
   };
 
   return (
-    <div
-      className={cn(
-        "relative  rounded-3xl overflow-hidden border sm:p-4 p-1",
-        className
-      )}
-    >
+    <div className={cn("relative rounded-3xl border sm:p-4 p-1", className)}>
+      <HoverFlipText
+        primary="WORK EXPERIANCE"
+        className="absolute text-foreground sm:text-6xl text-3xl font-bold text-left -top-5  sm:-top-12 bg-background"
+      ></HoverFlipText>
       <LayoutGroup>
-        <div className="grid gap-0 grid-cols-2 sm:grid-cols-3 auto-rows-[minmax(120px,1fr)] transition-all">
+        <div className="grid gap-0 grid-cols-2 sm:grid-cols-3 auto-rows-[minmax(120px,1fr)] transition-all min-h-96">
           {localItems.map((item, idx) => (
             <motion.div
               key={item.id}
@@ -63,7 +62,12 @@ const BentoGrid = ({
 
               <Card>
                 {/* Index number visible everywhere */}
-                <div className="text-zinc-500 text-xs font-mono z-40">
+                <div
+                  className={`text-zinc-500 text-xs font-mono z-40 ${
+                    item.duration === "Oct 2024 – Present" &&
+                    "bg-[#39ff14] inline !text-black px-2"
+                  }`}
+                >
                   {item.duration}
                 </div>
 
