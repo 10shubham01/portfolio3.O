@@ -40,7 +40,7 @@ const BentoGrid = ({
       <LayoutGroup>
         <div
           className={cn(
-            "grid gap-2 grid-cols-1 sm:grid-cols-4 auto-rows-[minmax(120px,1fr)] transition-all relative"
+            "grid gap-2 grid-cols-4 auto-rows-[minmax(120px,1fr)] transition-all relative"
           )}
         >
           {localitems.map((item, idx) => (
@@ -58,7 +58,7 @@ const BentoGrid = ({
                   cursor-pointer  
                   ${
                     idx === 0
-                      ? "lg:col-span-2 lg:row-span-2 sm:col-span-2 sm:row-span-1"
+                      ? "sm:col-span-2 sm:row-span-2 col-span-4 row-span-4"
                       : "aspect-square"
                   }
                 `}

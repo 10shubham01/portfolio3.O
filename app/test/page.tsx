@@ -2,71 +2,42 @@ import BentoGrid from "@/components/BentoGrid";
 import React from "react";
 export const projects = [
   {
-    title: "Stripe",
     id: 1,
+    title: "Credilio Financial Technologies — Senior Software Engineer",
     description:
-      "A technology company that builds economic infrastructure for the internet.",
-    link: "https://stripe.com",
+      "Led a team of engineers and mentored developers through code reviews, knowledge sharing, and onboarding. Managed and optimized GitHub CI/CD pipelines for AWS deployment, ensuring efficient and reliable releases.",
+    link: "https://www.credilio.in/",
   },
   {
     id: 2,
-
-    title: "Netflix",
+    title: "Customer Portal — Credilio",
     description:
-      "A streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries, and more on thousands of internet-connected devices.",
-    link: "https://netflix.com",
+      "Integrated multiple bank APIs to streamline credit card and personal loan journeys. Rebuilt the portal using composable architecture, improving maintainability by 20%. Enhanced page load performance using virtual scrolling, debouncing, and rendering optimizations.",
+    link: "https://www.credilio.in/",
   },
   {
     id: 3,
-    title: "Google",
+    title: "Advisor Portal — Credilio",
     description:
-      "A multinational technology company that specializes in Internet-related services and products.",
-    link: "https://google.com",
+      "Developed reusable and accessible components with built-in validation. Implemented lead, customer, and earnings reports with secure file downloads. Built persistent JWT-based authentication and authorization adhering to security best practices.",
+    link: "https://www.credilio.in/",
   },
   {
     id: 4,
-
-    title: "Meta",
+    title: "Plug and Play Platform — Credilio",
     description:
-      "A technology company that focuses on building products that advance Facebook's mission of bringing the world closer together.",
-    link: "https://meta.com",
+      "Delivered dynamic theme support for partner integrations. Facilitated communication between Android/iOS apps and WebView in a single-page app, leading a team of 3–4 developers. Guided partner developers for seamless web-to-native integration.",
+    link: "https://www.credilio.in/",
   },
   {
     id: 5,
-    title: "Amazon",
+    title: "MountBlue Technologies — Software Engineer/Trainee",
     description:
-      "A multinational technology company focusing on e-commerce, cloud computing, digital streaming, and artificial intelligence.",
-    link: "https://amazon.com",
-  },
-  {
-    id: 6,
-    title: "Amazon",
-    description:
-      "A multinational technology company focusing on e-commerce, cloud computing, digital streaming, and artificial intelligence.",
-    link: "https://amazon.com",
-  },
-  {
-    id: 7,
-    title: "Amazon",
-    description:
-      "A multinational technology company focusing on e-commerce, cloud computing, digital streaming, and artificial intelligence.",
-    link: "https://amazon.com",
-  },
-  {
-    id: 8,
-    title: "Amazon",
-    description:
-      "A multinational technology company focusing on e-commerce, cloud computing, digital streaming, and artificial intelligence.",
-    link: "https://amazon.com",
-  },
-  {
-    id: 9,
-    title: "Amazon",
-    description:
-      "A multinational technology company focusing on e-commerce, cloud computing, digital streaming, and artificial intelligence.",
-    link: "https://amazon.com",
+      "Built dynamic full-stack applications using Vue.js, React.js, and Node.js. Migrated Nuxt 2 projects to Nuxt 3 for better performance and maintainability. Delivered high-quality code with strong debugging and QA focus using Express.js and PostgreSQL/MySQL.",
+    link: "https://www.mountblue.io/",
   },
 ];
+
 export default function page() {
   return (
     <div className=" w-screen flex justify-center items-center">
