@@ -19,7 +19,7 @@
   --border: #404040;
   --accent: #262626;
   --accent-foreground: #ededed;
-  --grid-color: #080808;
+  --grid-color: #000000;
 }
 
 @theme inline {

@@ -27,7 +27,7 @@ const Artboard = () => {
   return (
     <div className="sm:h-[calc(100vh-100px)] h-[calc(100dvh-400px)] sm:p-10 sm:pt-0 p-2 text-foreground">
       <div
-        className="size-full relative overflow-hidden border-2 border-border flex justify-center items-center bg-background !cursor-grab"
+        className="size-full relative overflow-hidden border-2 border-border flex justify-center items-center bg-background/90 !cursor-grab"
         ref={ref}
       >
         <motion.div
