@@ -25,7 +25,7 @@ const DATA = {
 const Artboard = () => {
   const ref = useRef<HTMLDivElement>(null);
   return (
-    <div className="sm:h-[calc(100vh-100px)] h-[calc(100dvh-400px)] sm:p-10 sm:pt-0 p-2 text-foreground">
+    <div className="sm:h-[calc(100vh-100px)] h-[calc(100vh-300px)] sm:p-10 sm:pt-0 p-2 text-foreground">
       <div
         className="size-full relative overflow-hidden border flex justify-center items-center bg-background/90 !cursor-grab"
         ref={ref}
@@ -45,7 +45,7 @@ const Artboard = () => {
           dragMomentum={false}
           dragConstraints={ref}
         >
-          <div className="relative sm:h-[calc(100vh-100px)] h-[calc(100vh-400px)] flex flex-col justify-around py-32 items-center w-screen text-center grand-child">
+          <div className="relative sm:h-[calc(100vh-100px)] h-[calc(100vh-200px)] flex flex-col justify-around py-32 items-center w-screen text-center grand-child">
             <div
               className={`flex flex-col items-center ${instrument_Serif.className}`}
             >
@@ -77,11 +77,11 @@ const Artboard = () => {
             </div>
             <CardFan
               gallery={DATA.gallary}
-              className="sm:size-72 size-28 absolute sm:right-0 -right-20 flex items-end justify-center bottom-0"
+              className="sm:size-72 size-28 absolute sm:right-0 -right-20 flex items-end justify-center sm:bottom-0 bottom-20"
             />
             <CardFan
               gallery={DATA.gallary2}
-              className={`sm:size-60 size-28 absolute -left-10 flex items-end justify-center bottom-0 ${instrument_Serif.className}`}
+              className={`sm:size-60 size-28 absolute -left-10 flex items-end justify-center sm:bottom-0 bottom-20 ${instrument_Serif.className}`}
               title="Adventure is out there!"
             />
           </div>

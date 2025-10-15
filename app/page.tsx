@@ -16,13 +16,13 @@ const spacemono = Bricolage_Grotesque({
 const Page = () => {
   return (
     <main className={`${spacemono.className}`}>
-      <section id="home" className="space-y-10">
+      <section id="home" className="h-dvh">
         <Artboard />
       </section>
 
       <section
         id="about"
-        className="sm:p-10 sm:pt-0 pt-0 p-2  sm:!px-35 !px-10 h-screen flex flex-col justify-center "
+        className="sm:p-10 sm:pt-0 pt-0 p-2  sm:!px-35 !px-10 h-screen flex flex-col justify-center items-center"
       >
         <div className="max-w-4xl font-bold">
           <ScrollAnimatedText />
@@ -39,7 +39,7 @@ const Page = () => {
       </section>
       <section
         id="work"
-        className="sm:p-10 sm:pt-0 pt-0 p-2  sm:!px-35 !px-10 py-20 h-screen flex-col flex justify-center items-center"
+        className="sm:p-10 sm:pt-0 pt-0 p-2  sm:!px-35 !px-10 py-20 sm:h-screen h-auto flex-col flex justify-center items-center "
       >
         <BentoGrid items={experience}></BentoGrid>
       </section>

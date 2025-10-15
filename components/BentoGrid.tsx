@@ -28,15 +28,15 @@ const BentoGrid = ({
     <div className={cn("relative rounded-3xl border sm:p-4 p-1", className)}>
       <HoverFlipText
         primary="WORK EXPERIANCE"
-        className="absolute text-foreground sm:text-6xl text-3xl font-bold text-left -top-5  sm:-top-12 bg-background"
+        className="absolute text-foreground sm:text-6xl text-2xl font-bold text-left -top-4  sm:-top-12 bg-background"
       ></HoverFlipText>
       <LayoutGroup>
-        <div className="grid gap-0 grid-cols-2 sm:grid-cols-3 auto-rows-[minmax(120px,1fr)] transition-all min-h-96">
+        <div className="grid gap-0 grid-cols-2 sm:grid-cols-3 auto-rows-[minmax(120px,1fr)] transition-all min-h-96 overflow-hidden">
           {localItems.map((item, idx) => (
             <motion.div
               key={item.id}
               layout
-              initial={{ opacity: 0, x: 200 }}
+              initial={{ opacity: 0, x: 100 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{
