@@ -22,7 +22,7 @@ const Page = () => {
 
       <section
         id="about"
-        className="sm:p-10 sm:pt-0 pt-0 p-2  sm:!px-35 !px-10 h-screen flex flex-col justify-center items-center"
+        className="sm:p-10 sm:pt-0 pt-0 p-2  sm:!px-35 !px-10 h-screen flex flex-col justify-center"
       >
         <div className="max-w-4xl font-bold">
           <ScrollAnimatedText />

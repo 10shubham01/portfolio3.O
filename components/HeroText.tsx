@@ -41,7 +41,10 @@ export default function HeroText({ text, className = "" }: HeroTextProps) {
         style={{ WebkitTextStroke: "1px rgba(255, 0, 0, 0.3)" }}
       >
         {text.split("").map((char, index) => (
-          <span key={index} className="inline-block">
+          <span
+            key={index}
+            className="inline-block z-50 cursor-grab select-none"
+          >
             {char === " " ? "\u00A0" : char}
           </span>
         ))}
