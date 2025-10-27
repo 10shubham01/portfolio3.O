@@ -34,6 +34,18 @@
   --font-mono: var(--font-geist-mono);
 }
 
+@layer components {
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
 * {
   border-color: var(--border);
 }

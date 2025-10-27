@@ -22,11 +22,13 @@ const Blogs = ({
         className="absolute text-foreground sm:text-6xl text-2xl font-bold text-left -top-4  sm:-top-12 bg-background"
       ></HoverFlipText>
       <LayoutGroup>
-        <div className="grid gap-0 grid-cols-2 sm:grid-cols-4 auto-rows-[minmax(120px,1fr)] transition-all  overflow-hidden ">
+        <div className="grid gap-0 grid-cols-1 sm:grid-cols-4 auto-rows-[minmax(120px,1fr)] transition-all  overflow-hidden ">
           {items.map((item, idx) => (
-            <motion.div
+            <motion.a
               key={item.id}
               layout
+              href={item.link}
+              target="_blank"
               initial={{ opacity: 0, x: 100 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.2 }}
@@ -55,7 +57,7 @@ const Blogs = ({
 
               <Card
                 className={cn(
-                  "aspect-square",
+                  "sm:aspect-square",
                   hoveredIndex === idx ? "!bg-background invert border-0" : ""
                 )}
               >
@@ -68,12 +70,12 @@ const Blogs = ({
                   }`}
                 ></Alien>
                 <div className="flex flex-col justify-center h-full">
-                  <CardTitle className="font-semibold text-base mb-1">
+                  <CardTitle className="font-semibold sm:text-base mb-1 text-sm">
                     {item.title}
                   </CardTitle>
                 </div>
               </Card>
-            </motion.div>
+            </motion.a>
           ))}
         </div>
       </LayoutGroup>

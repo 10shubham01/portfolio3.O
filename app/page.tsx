@@ -7,6 +7,7 @@ import { TextGenerateEffect } from "@/components/TextGenratedEffect";
 import HoverFlipText from "@/components/HoverFlipText";
 import BentoGrid from "@/components/BentoGrid";
 import Blogs from "@/components/Blogs";
+import AnimatedTextarea from "@/components/TextArea";
 
 const spacemono = Bricolage_Grotesque({
   subsets: ["latin"],
@@ -54,7 +55,7 @@ const Page = () => {
         id="contact"
         className="sm:p-10 sm:pt-0 pt-0 p-2  sm:!px-35 !px-10 py-20 h-screen  place-content-center"
       >
-        <div className="grid sm:grid-cols-2 gap-8">
+        <div className="grid sm:grid-cols-2 gap-8 place-items-center">
           <div>
             <h1 className="text-2xl font-bold text-foreground mb-4">
               GET IN TOUCH
@@ -64,6 +65,7 @@ const Page = () => {
               always excited to take on new challenges and create something
               amazing.
             </p>
+            <AnimatedTextarea></AnimatedTextarea>
           </div>
           <div className="space-y-4">
             <div>
