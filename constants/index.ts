@@ -1,3 +1,4 @@
+
 export const WHAT_CAN_I_DO = [
   // First line
   {
@@ -123,5 +124,20 @@ export const experience = [
       "GitHub Actions",
     ],
     link: "https://www.mountblue.io/",
+  },
+];
+
+export const blogs = [
+  {
+    id: 1,
+    title: "How to Prevent Direct Pushes to the main Branch in Git",
+    created_at: "May 7,2025",
+    link: "https://medium.com/@10shubham01/how-to-prevent-direct-pushes-to-the-main-branch-in-git-18c9237c39e3",
+  },
+ {
+    id: 2,
+    title: "Clean Up Unused Assets in public/ Directory with a Simple Node.js Script",
+    created_at: "April 16,2025",
+    link: "https://medium.com/@10shubham01/clean-up-unused-assets-in-public-directory-with-a-simple-node-js-script-fd055f58b5a9",
   },
 ];
