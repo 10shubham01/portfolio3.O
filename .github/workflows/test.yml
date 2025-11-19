@@ -17,6 +17,6 @@ jobs:
         uses: vishalsinha21/dynamic-checklist@v1
         with:
           # Path to your checklist definition file
-          input-file: 'pr-checklist.yml'
+          mappingFile: 'pr-checklist.yml'
           # The GITHUB_TOKEN is required for the action to comment on the PR
           gh-token: ${{ secrets.GITHUB_TOKEN }}
