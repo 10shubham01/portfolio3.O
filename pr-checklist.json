@@ -1,60 +1,8 @@
 {
   "mappings": [
     {
-      "keywords": ["database/migrations/**"],
-      "comment": "Migration script tested on staging; index added for query columns; nullable/not-nullable rules checked; rollback script verified; migration reviewed"
-    },
-    {
-      "keywords": ["app/Models/**"],
-      "comment": "Model changes reviewed; migration/create/update validators created; unit tests completed; data integrity verified"
-    },
-    {
-      "keywords": ["app/Repositories/**"],
-      "comment": "Repository logic reviewed; query performance checked; unit tests completed"
-    },
-    {
-      "keywords": ["app/Services/**"],
-      "comment": "Service logic reviewed; error handling verified; unit tests completed"
-    },
-    {
-      "keywords": ["app/Validators/**"],
-      "comment": "Validation rules reviewed; edge cases tested; unit tests completed"
-    },
-    {
-      "keywords": ["app/Queues/**"],
-      "comment": "Queue logic reviewed; failure/retry handling verified; monitoring/alerting updated if needed"
-    },
-    {
-      "keywords": ["app/Libraries/**"],
-      "comment": "Library logic reviewed; integration points tested; documentation updated"
-    },
-    {
-      "keywords": ["app/Controllers/**"],
-      "comment": "Controller logic reviewed; request/response schema validated; error handling verified; unit tests completed"
-    },
-    {
-      "keywords": ["app/Middleware/**"],
-      "comment": "Middleware logic reviewed; security/validation checks verified; unit tests completed"
-    },
-    {
-      "keywords": ["commands/**"],
-      "comment": "Command logic reviewed; input validation checked; error handling verified; unit tests completed"
-    },
-    {
-      "keywords": ["start/routes/**"],
-      "comment": "Route definitions reviewed; auth and permissions checked; request/response schema validated; unit tests completed"
-    },
-    {
-      "keywords": ["CREATE INDEX"],
-      "comment": "Index created concurrently to avoid locking production tables"
-    },
-    {
       "keywords": ["console.log"],
       "comment": "Remove debug logs before merging"
-    },
-    {
-      "keywords": ["Event.emit"],
-      "comment": "Event logic reviewed; event.emit() confirmed to be non-awaited; listener/handler tested; error handling verified; unit tests completed"
     }
   ]
 }
