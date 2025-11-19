@@ -4,6 +4,8 @@ on:
   workflow_run:
     workflows: ["Dynamic PR Checklist"]
     types:  [completed]
+  pull_request:
+    types: [edited] 
 
 jobs:
   job1:

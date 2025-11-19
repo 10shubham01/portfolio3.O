@@ -15,6 +15,9 @@ export default function AnimatedTextarea() {
   console.log(height);
   console.log(height);
   console.log(height);
+  console.log(height);
+  console.log(height);
+
 
 
 
