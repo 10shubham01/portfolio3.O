@@ -1,0 +1,22 @@
+name: Dynamic PR Checklist
+ 
+on:
+  pull_request:
+    types: [opened, synchronize, edited] # Triggers when PR is opened, updated, or edited
+ 
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2 # Required to compare against previous commits
+ 
+      - name: Dynamic checklist generator
+        uses: vishal-sinha/dynamic-checklist@v1
+        with:
+          # Path to your checklist definition file
+          input-file: 'pr-checklist.yml'
+          # The GITHUB_TOKEN is required for the action to comment on the PR
+          gh-token: ${{ secrets.GITHUB_TOKEN }}
