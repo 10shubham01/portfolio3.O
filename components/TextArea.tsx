@@ -11,6 +11,9 @@ const poppins = Poppins({
 export default function AnimatedTextarea() {
   const [height, setHeight] = useState("auto");
   console.log(height);
+  console.log(height);
+  console.log(height);
+
 
   return (
     <div className="flex justify-end flex-col">
