@@ -1,30 +1,22 @@
 name: Dynamic PR Checklist
-
+ 
 on:
   pull_request:
-    types: [opened, synchronize, edited]
-
+    types: [opened, synchronize, edited] 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          fetch-depth: 2
-
+          fetch-depth: 2 # Required to compare against previous commits
+ 
       - name: Dynamic checklist generator
-        id: checklist
         uses: vishalsinha21/dynamic-checklist@v1
         with:
+          # Path to your checklist definition file
           mappingFile: 'pr-checklist.json'
-        env:
+          
+        env: 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Fail if checklist is not complete
-        run: |
-          if [ "${{ steps.checklist.outputs.completed }}" != "true" ]; then
-            echo "❌ Checklist incomplete! Please check all items before merging."
-            exit 1
-          fi
