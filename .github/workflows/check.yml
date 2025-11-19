@@ -1,11 +1,8 @@
 name: Require Checklist
 
 on:
-  workflow_run:
-    workflows: ["Dynamic PR Checklist"]
-    types:  [completed]
   issue_comment:
-    types: [edited] 
+    types: [edited,created] 
 
 jobs:
   job1:
