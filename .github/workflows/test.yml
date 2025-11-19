@@ -20,4 +20,4 @@ jobs:
           mappingFile: 'pr-checklist.json'
           
         env: 
-          GITHUB_TOKEN: ${{ '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' }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
