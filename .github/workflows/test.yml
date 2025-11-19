@@ -18,5 +18,6 @@ jobs:
         with:
           # Path to your checklist definition file
           mappingFile: 'pr-checklist.json'
-          # The GITHUB_TOKEN is required for the action to comment on the PR
-          gh-token: ${{ secrets.GITHUB_TOKEN }}
+          
+        env: 
+          GITHUB_TOKEN: ${{ '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' }}
